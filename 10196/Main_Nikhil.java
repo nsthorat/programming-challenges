@@ -79,6 +79,8 @@ public class Main {
 		int count = 0;
 		char[][] board = readBoard(scan);
 		while ( board != null ) {
+			scan.nextLine();
+			
 			int status = processBoard(board);
 			if ( status == 0 ) {
 				System.out.printf("Game #%d: no king is in check.\n", ++count);
@@ -129,6 +131,7 @@ public class Main {
 					return true;
 				}
 			}
+			break;
 		}
 		return false;
 	}
@@ -191,7 +194,6 @@ public class Main {
 				nullBoard = false;
 			}
 		}
-		scan.nextLine();
 		
 		if ( nullBoard ) {
 			return null;
